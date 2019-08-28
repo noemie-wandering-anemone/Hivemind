@@ -1,4 +1,9 @@
+const environment = process.env.NODE_ENV || 'development'
+const config = require('../knexfile')[environment]
+const connection = require('knex')(config)
+
 const server = require('./server')
+server.connection = connection
 
 const port = process.env.PORT || 3000
 

@@ -2,7 +2,13 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      filename: './server/dev.sqlite3'
+    },
+    migrations: {
+      directory: './server/migrations'
+    },
+    seeds: {
+      directory: './server/seeds'
     },
     useNullAsDefault: true,
     pool: {
@@ -16,8 +22,11 @@ module.exports = {
     connection: {
       filename: ':memory:'
     },
+    migrations: {
+      directory: './server/migrations'
+    },
     seeds: {
-      directory: './tests/seeds'
+      directory: './server/tests/seeds'
     },
     useNullAsDefault: true
   },
@@ -34,7 +43,11 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: './server/migrations'
+    },
+    seeds: {
+      directory: './server/seeds'
     }
   }
 }
