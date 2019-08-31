@@ -6,11 +6,17 @@ function createHive (hive, db = connection) {
   return db('hives')
     .insert({
       'subject': hive.question,
-      'description': hive.description,
+      'description': hive.explanation,
       'date_created': moment().format('MMMM Do YYYY, h:mm:ss a')
     })
 }
 
+function getHive(id, db = connection) {
+  return db('hives')
+    .where('id', id).first()
+}
+
 module.exports = {
   createHive,
+  getHive
 }

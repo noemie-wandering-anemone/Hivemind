@@ -17,13 +17,15 @@ router.get('/ask', (req, res) => {
 })
 
 router.post('/ask', (req, res) => {
-  console.log(req.body)
   return db.createHive(req.body)
     .then(id => res.redirect('/hive/' + id))
 })
 
 router.get('/hive/:id', (req, res) => {
-  res.render('hive')
+  return db.getHive(req.params.id)
+        .then((hive) => {
+          res.render('hive', {hive: hive})
+        })
 })
 
 module.exports = router
