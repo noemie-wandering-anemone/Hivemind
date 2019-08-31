@@ -1,12 +1,16 @@
+const config = require('../knexfile').development
+const connection = require('knex')(config)
+const moment = require('moment');
+
+function createHive (hive, db = connection) {
+  return db('hives')
+    .insert({
+      'subject': hive.question,
+      'description': hive.description,
+      'date_created': moment().format('MMMM Do YYYY, h:mm:ss a')
+    })
+}
+
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers
-}
-
-function getUsers (db = connection) {
-  return db('users').select()
-}
-
-function getUser (id, db = connection) {
-  return db('users').where('id', id).first()
+  createHive,
 }
