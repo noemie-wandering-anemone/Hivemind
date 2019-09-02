@@ -1,11 +1,9 @@
-const express = require('express')
+import request from 'superagent'
 
-const db = require('../db')
-
-const router = express.Router()
-
-
-//routes
-
-
-module.exports = router
+export function addPost(post, id) {
+    return request.post('/v1/hive/' + id)
+    .send(post)
+    .catch(e => {
+      console.log('Error adding post', e)
+    })
+}
