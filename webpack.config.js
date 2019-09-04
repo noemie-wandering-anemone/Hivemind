@@ -9,13 +9,13 @@ module.exports = {
   mode: 'development',
   module: {
     rules: [{
-      test: /\.*js$/,
+      test: /\.*jsx?$/,
       loader: 'babel-loader',
       exclude: /node_modules/
     }]
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js', '.jsx']
   },
   devtool: 'source-map'
 }
