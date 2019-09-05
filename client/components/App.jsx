@@ -7,8 +7,19 @@ class App extends React.Component {
     super(props)
     this.state = {
       fruits: [],
-      name: 'What do you want to ask?',
+      form: {
+        name: 'What do you want to ask?',
+      }
     }
+  }
+
+  handleEntries = (event) => {
+    const {name, value} = event.target
+    this.setState({
+      form: {
+        [name]: value
+      }
+    })
   }
 
   componentDidMount() {
@@ -32,7 +43,7 @@ class App extends React.Component {
         <div className="form">
           <form action="/ask" method='post'>
             <label for="question">
-              <input type="text" name="name" value={this.state.name}></input>
+              <input type="text" name="name" value={this.state.name} onChange={this.handleEntries}></input>
             </label>
             <input type="submit" name="" value="Create a hive"></input>
           </form>
