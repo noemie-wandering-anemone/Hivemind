@@ -8,3 +8,7 @@ export function getFruits () {
       return res.body.fruits
     })
 }
+
+export function getData () {
+  return request.post
+}

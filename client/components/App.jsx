@@ -22,6 +22,11 @@ class App extends React.Component {
     })
   }
 
+  handleFormSubmit = () => {
+    const formData = this.state.form;
+    console.log(formData)
+  }
+
   componentDidMount() {
     getFruits()
       .then(fruits => {
@@ -41,11 +46,11 @@ class App extends React.Component {
           <h1>Hivemind</h1>
         </div>
         <div className="form">
-          <form action="/ask" method='post'>
+          <form method='post'>
             <label for="question">
-              <input type="text" name="name" value={this.state.name} onChange={this.handleEntries}></input>
+              <input type="text" name="name" value={this.state.form.name} onChange={this.handleEntries}></input>
             </label>
-            <input type="submit" name="" value="Create a hive"></input>
+            <button onClick={this.handleFormSubmit}>Create a hive</button>
           </form>
         </div>
       </div>
