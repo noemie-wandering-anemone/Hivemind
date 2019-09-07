@@ -6,8 +6,11 @@ const router = express.Router()
 
 //routes
 
-  router.post('/form', (req, res) => {
-    return db.createHive(req.body)
+  router.post('/', (req, res) => {
+    db.createHive(req.body)
+    .then(() => {
+        res.status(201).send('success')
+      })
   })
 
 module.exports = router

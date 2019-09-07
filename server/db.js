@@ -1,6 +1,8 @@
 const env = process.env.NODE_ENV || 'development'
 const config = require('../knexfile')[env]
 const db = require('knex')(config)
+const moment = require('moment');
+
 
 module.exports = {
   getUser: getUser,
@@ -22,7 +24,8 @@ function getFruits () {
   return db('fruit').select()
 }
 
-function createHive (hive, db = connection) {
+function createHive (hive) {
+  console.log(hive)
   return db('hives')
     .insert({
       'subject': hive.question,

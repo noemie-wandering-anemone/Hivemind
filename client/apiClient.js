@@ -9,6 +9,10 @@ export function getFruits () {
     })
 }
 
-export function createHive () {
+export function createHive (hive) {
   return request.post(rootUrl + '/form')
+  .send(hive)
+  .catch(e => {
+    console.log('error adding hive', e)
+  })
 }

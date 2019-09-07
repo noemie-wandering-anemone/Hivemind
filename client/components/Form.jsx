@@ -24,14 +24,14 @@ class Form extends React.Component {
         })
       }
     
-      handleFormSubmit = () => {
-        const formData = this.state;
-        console.log(formData)
+      handleFormSubmit = (event) => { 
+        createHive(this.state)
+        event.preventDefault()
       }
 
     render () {
         return (
-            <form>
+            <form  onSubmit={this.handleFormSubmit}>
                 <label htmlFor="question">Question</label>
                 <input id='question' type="text" name="question" value={this.state.question} onChange={this.handleEntries} required />
                 <label htmlFor="explanation">Maybe you want to give some context to your question?</label>
