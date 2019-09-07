@@ -7,8 +7,12 @@ class Form extends React.Component {
         this.state = {
             question: '',
             explanation: '',
-            duration: 0,
+            duration: 7,
         }
+    }
+
+    handleSlider = (event) => {
+        console.log(event.target)
     }
 
     handleEntries = (event) => {
@@ -31,12 +35,24 @@ class Form extends React.Component {
                 <label htmlFor="explanation">Maybe you want to give some context to your question?</label>
                 <textarea id="explanation" type="text" name="explanation" rows="10" cols="50" value={this.state.explanation} onChange={this.handleEntries} />
                 <label htmlFor="duration">Choose for how long your discussion will be on</label>
-                <button type="button" name="1day">1 Day</button>
-                <button type="button" name="1week">1 Week</button>
-                <button type="button" name="2weeks">2 Weeks</button>
+                <div className="slidecontainer">
+                    <input type="range" min="1" max="15" value={this.state.duration} className="slider" id="duration" onChange={this.handleSlider} />
+                </div>
+                <p>Value: <span id="value">{this.state.duration}</span></p>
                 {/* Add options to add pics, sounds, ... */}
                 <input type="submit" name="createHive" value="Create Hive!"></input>
+            {/* <script>
+            {const slider = document.getElementById("duration");
+            var output = document.getElementById("value");
+            output.innerHTML = slider.value;
+            
+            slider.oninput = function() {
+              output.innerHTML = this.value;
+            }}
+            </script> */}
             </form>
+            
+            
         )
     }
 }
