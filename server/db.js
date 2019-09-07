@@ -1,3 +1,7 @@
+const env = process.env.NODE_ENV || 'development'
+const config = require('../knexfile')[env]
+const db = require('knex')(config)
+
 module.exports = {
   getUser: getUser,
   getUsers: getUsers,
@@ -14,10 +18,8 @@ function getUser (id, db = connection) {
   getFruits
 }
 
-let fruits = ['banana', 'apple', 'feijoa']
-
 function getFruits () {
-  return Promise.resolve(fruits)
+  return db('fruit').select()
 }
 
 function createHive (hive, db = connection) {
