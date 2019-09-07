@@ -27,10 +27,9 @@ class Form extends React.Component {
         return (
             <form>
                 <label htmlFor="question">Question</label>
-                <input type="text" name="question" value={this.state.question} onChange={this.handleEntries} />
-                <label htmlFor="explanation">Explanation</label>
-                <p>Maybe you want to give some context to your question?</p>
-                <input type="text" name="explanation" value={this.state.explanation} onChange={this.handleEntries} />
+                <input id='question' type="text" name="question" value={this.state.question} onChange={this.handleEntries} required />
+                <label htmlFor="explanation">Maybe you want to give some context to your question?</label>
+                <textarea id="explanation" type="text" name="explanation" rows="10" cols="50" value={this.state.explanation} onChange={this.handleEntries} />
                 <label htmlFor="duration">Choose for how long your discussion will be on</label>
                 <button type="button" name="1day">1 Day</button>
                 <button type="button" name="1week">1 Week</button>
