@@ -26,12 +26,12 @@ class Form extends React.Component {
     render () {
         return (
             <form>
-                <label for="question">Question</label>
+                <label htmlFor="question">Question</label>
                 <input type="text" name="question" value={this.state.question} onChange={this.handleEntries} />
-                <label for="explanation">Explanation</label>
+                <label htmlFor="explanation">Explanation</label>
                 <p>Maybe you want to give some context to your question?</p>
                 <input type="text" name="explanation" value={this.state.explanation} onChange={this.handleEntries} />
-                <label for="duration">Choose for how long your discussion will be on</label>
+                <label htmlFor="duration">Choose for how long your discussion will be on</label>
                 <button type="button" name="1day">1 Day</button>
                 <button type="button" name="1week">1 Week</button>
                 <button type="button" name="2weeks">2 Weeks</button>
