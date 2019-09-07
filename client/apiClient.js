@@ -9,6 +9,6 @@ export function getFruits () {
     })
 }
 
-export function getData () {
-  return request.post
+export function createHive () {
+  return request.post(rootUrl + '/form')
 }

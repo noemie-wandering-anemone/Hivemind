@@ -1,7 +1,8 @@
 module.exports = {
   getUser: getUser,
   getUsers: getUsers,
-  getFruits: getFruits
+  getFruits: getFruits,
+  createHive: createHive
 }
 
 function getUsers (db = connection) {
@@ -17,4 +18,13 @@ let fruits = ['banana', 'apple', 'feijoa']
 
 function getFruits () {
   return Promise.resolve(fruits)
+}
+
+function createHive (hive, db = connection) {
+  return db('hives')
+    .insert({
+      'subject': hive.question,
+      'description': hive.explanation,
+      'date_created': moment().format('MMMM Do YYYY, h:mm:ss a')
+    })
 }

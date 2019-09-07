@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {createHive} from '../apiClient'
+
 class Form extends React.Component {
 
     constructor (props) {
@@ -41,15 +43,6 @@ class Form extends React.Component {
                 <p>Value: <span id="value">{this.state.duration}</span></p>
                 {/* Add options to add pics, sounds, ... */}
                 <input type="submit" name="createHive" value="Create Hive!"></input>
-            {/* <script>
-            {const slider = document.getElementById("duration");
-            var output = document.getElementById("value");
-            output.innerHTML = slider.value;
-            
-            slider.oninput = function() {
-              output.innerHTML = this.value;
-            }}
-            </script> */}
             </form>
             
             
