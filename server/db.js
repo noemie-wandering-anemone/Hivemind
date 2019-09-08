@@ -25,7 +25,6 @@ function getFruits () {
 }
 
 function createHive (hive) {
-  console.log(hive)
   return db('hives')
     .insert({
       'subject': hive.question,
