@@ -2,7 +2,6 @@ import React from "react";
 
 import Form from "./Form";
 import Hive from "./Hive"
-import { getFruits } from "../apiClient";
 
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 
@@ -15,12 +14,6 @@ class App extends React.Component {
       duration: 0
     };
   }
-
-  // componentDidMount() {
-  //   getFruits().then(fruits => {
-  //     this.setState({ fruits });
-  //   });
-  // }
 
   render() {
     return (

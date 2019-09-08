@@ -12,6 +12,12 @@ class Hive extends React.Component {
         //function to retrieve discussion data from database
     }
 
+      // componentDidMount() {
+  //   getFruits().then(fruits => {
+  //     this.setState({ fruits });
+  //   });
+  // }
+  
       // componentDidMount() ?
     getHive = () => {
         const id = this.props.match.params.id
