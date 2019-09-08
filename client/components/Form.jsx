@@ -28,7 +28,6 @@ class Form extends React.Component {
         createHive(this.state)
             .then(res => {
                const id = Number(res.text.slice(7))
-                console.log(this.props)
                 this.props.history.push('/hive/'+id)
             })
         event.preventDefault()

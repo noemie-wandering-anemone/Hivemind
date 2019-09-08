@@ -1,6 +1,7 @@
 import React from "react";
 
 import Form from "./Form";
+import Hive from "./Hive"
 import { getFruits } from "../apiClient";
 
 import { HashRouter as Router, Route, Link } from "react-router-dom";
@@ -38,6 +39,7 @@ class App extends React.Component {
           </div>
         </div>
         <Route path="/form" component={Form} />
+        <Route path="/hive/:id" component={Hive} /> 
       </Router>
     );
   }
