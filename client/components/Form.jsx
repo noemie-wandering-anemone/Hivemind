@@ -26,6 +26,10 @@ class Form extends React.Component {
     
       handleFormSubmit = (event) => { 
         createHive(this.state)
+            .then(res => {
+               const id = Number(res.text.slice(7))
+                this.props.history.push('/hive/'+id)
+            })
         event.preventDefault()
       }
 
@@ -36,16 +40,14 @@ class Form extends React.Component {
                 <input id='question' type="text" name="question" value={this.state.question} onChange={this.handleEntries} required />
                 <label htmlFor="explanation">Maybe you want to give some context to your question?</label>
                 <textarea id="explanation" type="text" name="explanation" rows="10" cols="50" value={this.state.explanation} onChange={this.handleEntries} />
-                <label htmlFor="duration">Choose for how long your discussion will be on</label>
+                <label htmlFor="duration">Choose a lifespan for your discussion</label>
                 <div className="slidecontainer">
                     <input type="range" min="1" max="15" value={this.state.duration} className="slider" id="duration" onChange={this.handleSlider} />
                 </div>
                 <p>Value: <span id="value">{this.state.duration}</span></p>
                 {/* Add options to add pics, sounds, ... */}
                 <input type="submit" name="createHive" value="Create Hive!"></input>
-            </form>
-            
-            
+            </form>       
         )
     }
 }

@@ -5,23 +5,8 @@ const moment = require('moment');
 
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers,
-  getFruits: getFruits,
-  createHive: createHive
-}
-
-function getUsers (db = connection) {
-  return db('users').select()
-}
-
-function getUser (id, db = connection) {
-  return db('users').where('id', id).first()
-  getFruits
-}
-
-function getFruits () {
-  return db('fruit').select()
+  createHive: createHive,
+  getHiveData: getHiveData,
 }
 
 function createHive (hive) {
@@ -31,4 +16,8 @@ function createHive (hive) {
       'description': hive.explanation,
       'date_created': moment().format('MMMM Do YYYY, h:mm:ss a')
     })
+}
+
+function getHiveData (id) {
+  return db('hives').where('id', id).first()
 }
