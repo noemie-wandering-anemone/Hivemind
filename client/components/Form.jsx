@@ -26,6 +26,11 @@ class Form extends React.Component {
     
       handleFormSubmit = (event) => { 
         createHive(this.state)
+            .then(res => {
+               const id = Number(res.text.slice(7))
+                console.log(this.props)
+                this.props.history.push('/hive/'+id)
+            })
         event.preventDefault()
       }
 
@@ -43,9 +48,7 @@ class Form extends React.Component {
                 <p>Value: <span id="value">{this.state.duration}</span></p>
                 {/* Add options to add pics, sounds, ... */}
                 <input type="submit" name="createHive" value="Create Hive!"></input>
-            </form>
-            
-            
+            </form>       
         )
     }
 }

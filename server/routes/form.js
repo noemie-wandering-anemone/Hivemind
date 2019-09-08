@@ -8,8 +8,8 @@ const router = express.Router()
 
   router.post('/', (req, res) => {
     db.createHive(req.body)
-    .then(() => {
-        res.status(201).send('success')
+    .then((result) => {
+        res.status(201).send('success ' + result)
       })
   })
 
