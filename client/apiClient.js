@@ -16,3 +16,10 @@ export function createHive (hive) {
     console.log('error adding hive', e)
   })
 }
+
+export function getHiveData (id) {
+  return request.get(rootUrl + '/hive/' + id)
+    .then(res => {
+      return res.body
+    })
+}

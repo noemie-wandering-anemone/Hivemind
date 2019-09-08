@@ -8,7 +8,8 @@ module.exports = {
   getUser: getUser,
   getUsers: getUsers,
   getFruits: getFruits,
-  createHive: createHive
+  createHive: createHive,
+  getHiveData: getHiveData,
 }
 
 function getUsers (db = connection) {
@@ -31,4 +32,8 @@ function createHive (hive) {
       'description': hive.explanation,
       'date_created': moment().format('MMMM Do YYYY, h:mm:ss a')
     })
+}
+
+function getHiveData (id) {
+  return db('hives').where('id', id).first()
 }
