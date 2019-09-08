@@ -1,45 +1,46 @@
-import React from 'react'
+import React from "react";
 
-import { getFruits } from '../apiClient'
+import Form from "./Form";
+import { getFruits } from "../apiClient";
+
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      fruits: [],
-      name: 'What do you want to ask?',
-    }
+      question: "What do you want to ask?",
+      explanation: "Maybe you want to give some context to your question?",
+      duration: 0
+    };
   }
 
-  componentDidMount() {
-    getFruits()
-      .then(fruits => {
-        this.setState({ fruits })
-      })
-  }
+  // componentDidMount() {
+  //   getFruits().then(fruits => {
+  //     this.setState({ fruits });
+  //   });
+  // }
 
   render() {
     return (
-      <div className='app'>
-        <ul>
-          {this.state.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-        <div id='indexHeader'>
-          <h1>Hivemind</h1>
+      <Router>
+        <div className="app">
+          {/* <ul>
+            {this.state.fruits.map(fruit => (
+              <li key={fruit}>{fruit}</li>
+            ))}
+          </ul> */}
+          <div id="indexHeader">
+            <h1>Hivemind</h1>
+            <Link to="/form">
+              <button>Create a hive</button>
+            </Link>
+          </div>
         </div>
-        <div className="form">
-          <form action="/ask" method='post'>
-            <label for="question">
-              <input type="text" name="name" value={this.state.name}></input>
-            </label>
-            <input type="submit" name="" value="Create a hive"></input>
-          </form>
-        </div>
-      </div>
-    )
+        <Route path="/form" component={Form} />
+      </Router>
+    );
   }
 }
 
-export default App
+export default App;

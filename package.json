@@ -4,14 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server --watch & webpack --watch client",
-    "notdev": "run-p dev:client dev:server",
-    "dev:client": "npm run build --watch",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "npm run build -- --watch",
     "dev:server": "nodemon server",
     "build": "webpack --config client/webpack.config.js",
     "server": "node server",
     "start": "run-s build server",
-    "test": "jest --verbose --watchAll"
+    "test": "jest --verbose --watchAll",
+    "knex": "knex"
   },
   "babel": {
     "presets": [
@@ -32,6 +32,9 @@
   "dependencies": {
     "express": "^4.16.4",
     "knex": "^0.19.3",
+    "moment": "^2.24.0",
+    "pg": "^7.12.1",
+    "react-router-dom": "^5.0.1",
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {

@@ -8,3 +8,11 @@ export function getFruits () {
       return res.body.fruits
     })
 }
+
+export function createHive (hive) {
+  return request.post(rootUrl + '/form')
+  .send(hive)
+  .catch(e => {
+    console.log('error adding hive', e)
+  })
+}
