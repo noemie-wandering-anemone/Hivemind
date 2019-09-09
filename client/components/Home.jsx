@@ -1,17 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    return (
-        <div id="home">
-            {/* <div id="wrapper"> */}
-            <div className="hexagon">
-                {/* <Link to="/form"><button>Create a hive</button></Link> */}
-            {/* </div> */}
-            </div>
+  return (
+    <div id="home">
+      <div className="hexagon-wrapper">
+        <div className="hexagon">
+          <div className="inner-hexagon">
+            <Link to="/form">
+              <button>Create a hive</button>
+            </Link>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
