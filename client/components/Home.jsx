@@ -4,7 +4,13 @@ import {Link} from 'react-router-dom'
 
 const Home = () => {
     return (
-    <Link to="/form"><button>Create a hive</button></Link>
+        <div id="home">
+            {/* <div id="wrapper"> */}
+            <div className="hexagon">
+                {/* <Link to="/form"><button>Create a hive</button></Link> */}
+            {/* </div> */}
+            </div>
+        </div>
     )
 }
 

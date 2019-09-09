@@ -47,18 +47,82 @@ table {
 	border-spacing: 0;
 }
 
+a:visited {
+	color: black;
+	text-decoration: 
+}
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /* ____________________________________ */
 
+#app {
+	text-align: center;
+}
 
 h1 {
     font-size: 5em;
     font-weight: bolder;
 }
 
-#indexHeader {
+header {
     text-align: center;
-    margin: 3em auto;
+    margin: 3em auto 3em;
 }
+
+/* _____________ Hexagon __________________ */
+/* Base code from https://csshexagon.com/ */
+
+/* #wrapper {
+    float: left;
+    width: calc(50% - 40px);
+    margin-right: 40px;
+    padding: 13.33333px;
+    background-color: #fefefe;
+    background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5), linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+} */
+
+.hexagon {
+	position: relative;
+	width: 300px; 
+	height: 173.21px;
+	/* background-color: #582626; */
+	margin: 86.60px 0;
+	border-left: solid 5px #333333;
+	border-right: solid 5px #333333;
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 212.13px;
+	height: 212.13px;
+	-webkit-transform: scaleY(0.5774) rotate(-45deg);
+	-ms-transform: scaleY(0.5774) rotate(-45deg);
+	transform: scaleY(0.5774) rotate(-45deg);
+	background-color: inherit;
+	left: 38.9340px;
+  }
+  
+  .hexagon:before {
+	top: -106.0660px;
+	border-top: solid 7.0711px #333333;
+	border-right: solid 7.0711px #333333;
+  }
+  
+  .hexagon:after {
+	bottom: -106.0660px;
+	border-bottom: solid 7.0711px #333333;
+	border-left: solid 7.0711px #333333;
+  }
+  
 
 /* _____________ FORM __________________ */
 
