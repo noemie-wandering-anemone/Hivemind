@@ -22,7 +22,10 @@ class NewBuzz extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         saveBuzz(this.state)
-
+        this.setState({
+            ...this.state,
+            content: ''
+        })
     }
 
     render () {

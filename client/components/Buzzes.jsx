@@ -10,7 +10,10 @@ class Buzzes extends React.Component {
             ...props,
             buzzes: []
         }
+        
     }
+
+    
 
     componentDidMount () {
             const hive_id = this.props.hive_id
@@ -20,6 +23,7 @@ class Buzzes extends React.Component {
                         ...this.state,
                         buzzes: buzzes
                     })
+                    console.log(this.state)
                 })
     }
 

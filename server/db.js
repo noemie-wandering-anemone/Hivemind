@@ -16,7 +16,8 @@ function createHive (hive) {
     .insert({
       'subject': hive.question,
       'description': hive.explanation,
-      'date_created': moment().format('Do MMMM YYYY, h:mm:ss a')
+      'dateCreated': moment().format('Do MMMM YYYY, h:mm:ss a'),
+      'endDate': endDate(hive.duration),
     })
 }
 
@@ -33,4 +34,11 @@ function addBuzz (buzz) {
 
 function getBuzzes (hive_id) {
   return db('buzzes').where('hive_id', hive_id)
+}
+
+function endDate(duration) {
+  let startDate = moment().format('Do MMMM YYYY')
+  let num = Number(duration)
+  let endDate = moment(startDate, 'Do MMMM YYYY').add(num, 'days')
+  return endDate.format('MMMM Do YYYY')
 }

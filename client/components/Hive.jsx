@@ -19,6 +19,7 @@ class Hive extends React.Component {
         getHiveData(id)
             .then((hive) => {
                 this.setState(hive)
+                
             })
     // }
 }
@@ -27,8 +28,9 @@ class Hive extends React.Component {
         return (
             <React.Fragment>
                 <h2>{this.state.subject}</h2>
-                <p>{this.state.date_created}</p>
+                <p>{this.state.dateCreated}</p>
                 <p>{this.state.description}</p>
+                {/* <p>{this.state}</p> */}
                 {this.state.id && <Buzzes hive_id={this.state.id} />}
                 {this.state.id && <NewBuzz hive_id={this.state.id} />}
             </React.Fragment>
