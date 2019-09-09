@@ -16,7 +16,7 @@ function createHive (hive) {
     .insert({
       'subject': hive.question,
       'description': hive.explanation,
-      'date_created': moment().format('MMMM Do YYYY, h:mm:ss a')
+      'date_created': moment().format('Do MMMM YYYY, h:mm:ss a')
     })
 }
 
