@@ -14,7 +14,9 @@ class Form extends React.Component {
     }
 
     handleSlider = (event) => {
-        console.log(event.target)
+        this.setState({
+            duration: event.target.value
+        })
     }
 
     handleEntries = (event) => {
