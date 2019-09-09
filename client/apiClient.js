@@ -24,3 +24,10 @@ export function saveBuzz (buzz) {
       console.log('error adding buzz', e)
     })
 }
+
+export function getBuzzes (hive_id) {
+  return request.get(rootUrl + '/hive/buzz/' + hive_id)
+  .then(res => {
+    return res.body
+  })
+}

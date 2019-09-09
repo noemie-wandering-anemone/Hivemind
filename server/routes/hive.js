@@ -19,4 +19,11 @@ router.post('/buzz', (req, res) => {
   })
 })
 
+router.get('/buzz/:id', (req, res) => {
+  db.getBuzzes(req.params.id, req.app.connection)
+  .then((buzzes) => {
+    res.send(buzzes)
+  })
+})
+
 module.exports = router

@@ -8,6 +8,7 @@ module.exports = {
   createHive: createHive,
   getHiveData: getHiveData,
   addBuzz: addBuzz,
+  getBuzzes: getBuzzes,
 }
 
 function createHive (hive) {
@@ -28,4 +29,8 @@ function addBuzz (buzz) {
     .insert({
       ...buzz
     })
+}
+
+function getBuzzes (hive_id) {
+  return db('buzzes').where('hive_id', hive_id)
 }
