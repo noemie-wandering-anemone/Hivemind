@@ -27,10 +27,12 @@ class Hive extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <div id="hive-info">
                 <h2>{this.state.subject}</h2>
-                <p>{this.state.dateCreated}</p>
-                <p>{this.state.description}</p>
-                {/* <p>{this.state}</p> */}
+                <p>Initiated by (creator) on {this.state.dateCreated}.</p>
+                {this.state.description && <p>Context: {this.state.description}</p>}
+                </div>
+                <h3>Answers</h3>
                 {this.state.id && <Buzzes hive_id={this.state.id} />}
                 {this.state.id && <NewBuzz hive_id={this.state.id} />}
             </React.Fragment>
