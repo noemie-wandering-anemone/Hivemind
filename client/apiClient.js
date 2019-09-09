@@ -16,3 +16,11 @@ export function getHiveData (id) {
       return res.body
     })
 }
+
+export function saveBuzz (buzz) {
+  return request.post(rootUrl + '/hive/buzz')
+    .send(buzz)
+    .catch(e => {
+      console.log('error adding buzz', e)
+    })
+}

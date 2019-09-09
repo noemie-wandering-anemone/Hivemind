@@ -7,6 +7,7 @@ const moment = require('moment');
 module.exports = {
   createHive: createHive,
   getHiveData: getHiveData,
+  addBuzz: addBuzz,
 }
 
 function createHive (hive) {
@@ -20,4 +21,11 @@ function createHive (hive) {
 
 function getHiveData (id) {
   return db('hives').where('id', id).first()
+}
+
+function addBuzz (buzz) {
+  return db('buzzes')
+    .insert({
+      ...buzz
+    })
 }
