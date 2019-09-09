@@ -141,6 +141,17 @@ header {
 	transform: perspective(1px) translateY(-50%);
   }
 
+/* _____________Content________________*/
+
+#home #content {
+	padding-top: 3em;
+}
+
+#home #content .hexagon-wrapper{
+	float: left;
+}
+
+
 /* _____________ FORM __________________ */
 
 form {

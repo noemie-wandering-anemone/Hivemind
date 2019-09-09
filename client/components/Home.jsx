@@ -13,7 +13,23 @@ const Home = () => {
             </Link>
           </div>
         </div>
+          </div>
+          <div id="content">
+      <div className="hexagon-wrapper">
+        <div className="hexagon">
+          <div className="inner-hexagon">
+            <p>Stuff about privacy</p>
+          </div>
+        </div>
       </div>
+      <div className="hexagon-wrapper">
+        <div className="hexagon">
+          <div className="inner-hexagon">
+            <p>Stuff about NVC</p>
+          </div>
+        </div>
+              </div>
+              </div>
     </div>
   );
 };
