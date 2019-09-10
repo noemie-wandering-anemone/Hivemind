@@ -23,7 +23,6 @@ class Buzzes extends React.Component {
                         ...this.state,
                         buzzes: buzzes
                     })
-                    console.log(this.state)
                 })
     }
 

@@ -26,6 +26,7 @@ class NewBuzz extends React.Component {
             ...this.state,
             content: ''
         })
+        window.location.reload(false) //need redux or callback
     }
 
     render () {
