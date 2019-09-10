@@ -19,7 +19,7 @@ class Hive extends React.Component {
         getHiveData(id)
             .then((hive) => {
                 this.setState(hive)
-                
+                console.log(hive)
             })
     // }
 }
@@ -29,7 +29,7 @@ class Hive extends React.Component {
             <React.Fragment>
                 <div id="hive-info">
                 <h2>{this.state.subject}</h2>
-                <p>Initiated by (creator) on {this.state.dateCreated}.</p>
+                <p>Initiated by {this.state.name} on {this.state.dateCreated} and is set to last until the {this.state.endDate}.</p>
                 {this.state.description && <p>Context: {this.state.description}</p>}
                 </div>
                 <h3>Answers</h3>

@@ -23,6 +23,7 @@ class Buzzes extends React.Component {
                         ...this.state,
                         buzzes: buzzes
                     })
+                    console.log(buzzes)
                 })
     }
 
@@ -30,7 +31,7 @@ class Buzzes extends React.Component {
         return(
             <div id='buzzes'>
                 <ul>
-                    {this.state.buzzes.map(buzz => <li key={buzz.id}>{buzz.content}</li>)}
+                    {this.state.buzzes.map(buzz => <li key={buzz.id}><p>From {buzz.name}:</p><p>{buzz.content}</p></li>)}
                 </ul>
             </div>
         )

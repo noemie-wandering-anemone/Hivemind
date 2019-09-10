@@ -8,7 +8,8 @@ class NewBuzz extends React.Component {
         super(props)
         this.state = {
             ...props,
-            content: ""
+            content: "",
+            name: "",
         }
     }
 
@@ -32,6 +33,9 @@ class NewBuzz extends React.Component {
     render () {
         return (
             <form onSubmit={this.handleSubmit}>
+                <label htmlFor="name">Name: 
+                <input type="text" name="name" id="name" onChange={this.handleEntries} />
+                </label>
                 <textarea name="content" id="newBuzz" cols="70" rows="10" value={this.state.content} onChange={this.handleEntries} />
                 <input type="submit" value="Add answer"/>
             </form>

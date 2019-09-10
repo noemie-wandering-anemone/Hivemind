@@ -12,10 +12,13 @@ router.get('/:id', (req,res) => {
 })
 
 router.post('/buzz', (req, res) => {
-  db.addBuzz(req.body)
-  .then((result) => {
-    console.log(result)
-    res.status(201).send('success ' + result)
+  db.addBee(req.body)
+      .then((ids) => {
+        const id = ids[0]
+        db.addBuzz(req.body, id)
+          .then((result) => {
+            res.status(201).send('success ' + result)
+        })
   })
 })
 
