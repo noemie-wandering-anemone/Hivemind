@@ -19,11 +19,10 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="app">
-          <div id="indexHeader">
+          <header>
             <Link to="/"><h1>Hivemind</h1></Link>
-          </div>
-        </div>
+          </header>
+
         <Route exact path="/" component={Home} />
         <Route path="/form" component={Form} />
         <Route path="/hive/:id" component={Hive} /> 
