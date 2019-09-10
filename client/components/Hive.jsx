@@ -1,39 +1,40 @@
 import React from 'react'
 
-import {getHiveData} from '../apiClient'
+import { getHiveData } from '../apiClient'
+import Buzzes from './Buzzes'
+import NewBuzz from './NewBuzz'
 
 class Hive extends React.Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props)
         this.state = {
         }
-        this.getHive()
-        //function to retrieve discussion data from database
+        // this.getHive()
     }
 
-      // componentDidMount() {
-  //   getFruits().then(fruits => {
-  //     this.setState({ fruits });
-  //   });
-  // }
-  
-      // componentDidMount() ?
-    getHive = () => {
+    componentDidMount () {
+    // getHive = () => {
         const id = this.props.match.params.id
         getHiveData(id)
             .then((hive) => {
                 this.setState(hive)
-                console.log(this.state)
+                
             })
-    }
+    // }
+}
 
-    render () {
+    render() {
         return (
             <React.Fragment>
+                <div id="hive-info">
                 <h2>{this.state.subject}</h2>
-                <p>{this.state.dateCreated}</p>
-                <p>{this.state.description}</p>
+                <p>Initiated by (creator) on {this.state.dateCreated}.</p>
+                {this.state.description && <p>Context: {this.state.description}</p>}
+                </div>
+                <h3>Answers</h3>
+                {this.state.id && <Buzzes hive_id={this.state.id} />}
+                {this.state.id && <NewBuzz hive_id={this.state.id} />}
             </React.Fragment>
         )
     }
