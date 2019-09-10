@@ -19,7 +19,6 @@ class Hive extends React.Component {
         getHiveData(id)
             .then((hive) => {
                 this.setState(hive)
-                console.log(hive)
             })
     // }
 }
