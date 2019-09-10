@@ -5,18 +5,29 @@ const moment = require('moment');
 
 
 module.exports = {
+  addBee: addBee,
   createHive: createHive,
   getHiveData: getHiveData,
   addBuzz: addBuzz,
   getBuzzes: getBuzzes,
 }
 
-function createHive (hive) {
+function addBee(bee) {
+  return db('bees')
+    .insert({
+      'name': bee.creator,
+      'email': bee.email,
+      'sendHive': bee.toEmail,
+    })
+}
+
+function createHive(hive, id) {
   return db('hives')
     .insert({
       'subject': hive.question,
-      'description': hive.explanation,
       'dateCreated': moment().format('Do MMMM YYYY, h:mm:ss a'),
+      'creator_id': id,
+      'description': hive.explanation,
       'endDate': endDate(hive.duration),
     })
 }
