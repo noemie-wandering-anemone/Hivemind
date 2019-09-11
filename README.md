@@ -1,4 +1,15 @@
-# Fullstack boilerplate
+## Hivemind
+
+### To do list
+- Delete hive when expired
+- Export hive as PDF
+- Generate random url
+- Import pics, sounds, ...
+- User-friendly way to share url
+
+
+
+### Fullstack boilerplate
 
 To get started:
 
