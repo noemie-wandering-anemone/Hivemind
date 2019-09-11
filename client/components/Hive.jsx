@@ -1,4 +1,5 @@
 import React from 'react'
+const moment = require('moment');
 
 import { getHiveData } from '../apiClient'
 import Buzzes from './Buzzes'
@@ -18,17 +19,26 @@ class Hive extends React.Component {
         const id = this.props.match.params.id
         getHiveData(id)
             .then((hive) => {
+                var now = moment();
+                var end = moment(hive.endDate);
+               
+                console.log('now', now, 'endDate', end)
+                // if ()
+
+
                 this.setState(hive)
             })
     // }
 }
 
     render() {
+
         return (
+            
             <React.Fragment>
                 <div id="hive-info">
                 <h2>{this.state.subject}</h2>
-                <p>Initiated by {this.state.name} on {this.state.dateCreated} and is set to last until the {this.state.endDate}.</p>
+                    <p>Initiated by {this.state.name} on {this.state.dateCreated} and is set to last until the {this.state.endDate}.</p>
                 {this.state.description && <p>Context: {this.state.description}</p>}
                 </div>
                 <h3>Answers</h3>
