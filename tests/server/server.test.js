@@ -2,25 +2,24 @@ const request = require('supertest')
 const cheerio = require('cheerio')
 
 jest.mock('../../server/db', () => ({
-  getUser: (id) => Promise.resolve(
-    {id: id, name: 'test user', email: 'test@user.nz'}
+  getHiveData: (id) => Promise.resolve(
+    {id: id, subject: 'test subject', dateCreated: 'test date', creator_id: 'test creator', description: 'test description', endDate: 'test end date'}
   ),
-  getUsers: () => Promise.resolve([
-    {id: 2, name: 'test user 2', email: 'test2@user.nz'},
-    {id: 4, name: 'test user 4', email: 'test4@user.nz'}
-  ])
+  // getUsers: () => Promise.resolve([
+  //   {id: 2, name: 'test user 2', email: 'test2@user.nz'},
+  //   {id: 4, name: 'test user 4', email: 'test4@user.nz'}
+  // ])
 }))
 
-const server = require('../../server')
+const server = require('../../server/server')
 
-test('GET /', () => {
+test('GET /:id', () => {
   return request(server)
-    .get('/')
+    .get('/api/v1/hive/1')
     .expect(200)
     .then((res) => {
-      const $ = cheerio.load(res.text)
-      const firstLiText = $('li').first().text()
-      expect(firstLiText).toBe('test user 2 (test2@user.nz)')
+      expect(res.body.subject).toBe('test subject')
     })
     .catch(err => expect(err).toBeNull())
 })
+
