@@ -47,9 +47,13 @@ table {
 	border-spacing: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 a:visited {
-	color: black;
-	text-decoration: 
+	color: rgb(63, 44, 0);
+	text-decoration: none;
 }
 
 *, *:before, *:after {
@@ -57,27 +61,41 @@ a:visited {
 	box-sizing: border-box;
 }
 
+body {
+	background-color: rgb(243, 232, 170);
+	color: rgb(63, 44, 0);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
 /* ____________________________________ */
 
 #app {
 	text-align: center;
-}
-
-h1 {
-    font-size: 5em;
-    font-weight: bolder;
+	width: 60%;
+	margin: 0 auto;
 }
 
 header {
     text-align: center;
-    margin: 3em auto 3em;
+	margin: 3em auto 1em;
+	padding-bottom: 2em;
+	width: 40em;
+	border-bottom: double rgb(63, 44, 0);
 }
+
+h1 {
+    font-size: 5em;
+	font-weight: bolder;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
 
 /* _____________ Hexagon __________________ */
 /* Base code from https://csshexagon.com/ */
 
 #home {
-	width: 60%;
+	width: 50%;
 	margin: 0 auto;
 	padding: 5em;
 }
@@ -105,8 +123,8 @@ header {
 	margin-right: auto;
 	height: 173.21px;
 	margin: 86.60px 0;
-	border-left: solid 5px #333333;
-	border-right: solid 5px #333333;
+	border-left: solid 5px rgb(63, 44, 0);
+	border-right: solid 5px rgb(63, 44, 0);
   }
   
   .hexagon:before,
@@ -125,14 +143,14 @@ header {
   
   .hexagon:before {
 	top: -106.0660px;
-	border-top: solid 7.0711px #333333;
-	border-right: solid 7.0711px #333333;
+	border-top: solid 7.0711px rgb(63, 44, 0);
+	border-right: solid 7.0711px rgb(63, 44, 0);
   }
   
   .hexagon:after {
 	bottom: -106.0660px;
-	border-bottom: solid 7.0711px #333333;
-	border-left: solid 7.0711px #333333;
+	border-bottom: solid 7.0711px rgb(63, 44, 0);
+	border-left: solid 7.0711px rgb(63, 44, 0);
   }
   
   .inner-hexagon {
@@ -161,6 +179,10 @@ form {
     align-items: center;
 	margin: 2em auto;
 	width: 50%;
+}
+
+#hiveForm label {
+	margin-bottom: 1em;
 }
 
 textarea {
@@ -199,17 +221,52 @@ textarea {
 /* ___________Hive______________________ */
 
 h2 {
-    font-size: 4em;
+    font-size: 3em;
 	font-weight: bolder;
-	margin-top: 1em;
-	margin-bottom: 0.5em;
 }
 
+#hive-info {
+	margin-bottom: 4em;
+}
+
+#hiveData {
+	margin-bottom: 2em;
+	font-style: italic;
+}
+
+
+
 h3 {
-	
+	font-weight: bold;
+	font-size: 1.5em;
 }
 
 p {
 	margin: 1em 0;
 }
 
+#buzzes {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#buzzes ul li {
+	display: flex;
+	align-items: baseline;
+}
+
+.bee {
+	font-weight: bold;
+	margin-right: 2em;
+	flex-grow: 1;
+	text-align: left;
+}
+
+.buzz {
+	border: solid rgb(63, 44, 0);
+	border-radius: 15px;
+	border-width: thin;
+	padding: 1em;
+	display: inline-block;
+	flex-grow: 3;
+}
