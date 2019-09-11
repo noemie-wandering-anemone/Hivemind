@@ -32,7 +32,7 @@ class NewBuzz extends React.Component {
 
     render () {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} id="buzzForm">
                 <label htmlFor="name">Name: 
                 <input type="text" name="name" id="name" onChange={this.handleEntries} />
                 </label>

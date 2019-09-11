@@ -13,17 +13,15 @@ class Buzzes extends React.Component {
         
     }
 
-    
-
     componentDidMount () {
-            const hive_id = this.props.hive_id
-            getBuzzes(hive_id)
-                .then((buzzes) => {
-                    this.setState({
-                        ...this.state,
-                        buzzes: buzzes
-                    })
+        const hive_id = this.props.hive_id
+        getBuzzes(hive_id)
+            .then((buzzes) => {
+                this.setState({
+                    ...this.state,
+                    buzzes: buzzes
                 })
+            })
     }
 
     render () {

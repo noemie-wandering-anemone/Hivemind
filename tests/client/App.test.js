@@ -49,13 +49,11 @@ describe('routes: paths point to the right component', () => {
   })
 })
 
-test('home has action button', () => {
+test('homepage has action button', () => {
   const wrapper = render(<App />)
   const button = wrapper.find('button')
   expect(button.text()).toMatch('Create a hive')
 })
-
-
 
 test('renders an <li> for each buzz', () => {
   const wrapper = mount(<Buzzes />)

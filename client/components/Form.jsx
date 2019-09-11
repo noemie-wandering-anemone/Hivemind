@@ -48,7 +48,7 @@ class Form extends React.Component {
 
     render () {
         return (
-            <form  onSubmit={this.handleFormSubmit}>
+            <form  onSubmit={this.handleFormSubmit} id="hiveForm">
                 <label htmlFor="question">Question</label>
                 <input id='question' type="text" name="question" value={this.state.question} onChange={this.handleEntries} required />
                 <label htmlFor="explanation">Maybe you want to give some context to your question?</label>

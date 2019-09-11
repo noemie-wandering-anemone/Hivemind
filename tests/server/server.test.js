@@ -1,7 +1,7 @@
 const request = require('supertest')
 const cheerio = require('cheerio')
 
-jest.mock('../db', () => ({
+jest.mock('../../server/db', () => ({
   getUser: (id) => Promise.resolve(
     {id: id, name: 'test user', email: 'test@user.nz'}
   ),
@@ -11,7 +11,7 @@ jest.mock('../db', () => ({
   ])
 }))
 
-const server = require('../server')
+const server = require('../../server')
 
 test('GET /', () => {
   return request(server)
