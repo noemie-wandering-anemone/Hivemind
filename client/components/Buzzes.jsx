@@ -28,7 +28,7 @@ class Buzzes extends React.Component {
         return(
             <div id='buzzes'>
                 <ul>
-                    {this.state.buzzes.map(buzz => <li key={buzz.id}><p>From {buzz.name}:</p><p>{buzz.content}</p></li>)}
+                    {this.state.buzzes.map(buzz => <li key={buzz.id}><p className="bee">{buzz.name}:</p><p className="buzz">{buzz.content}</p></li>)}
                 </ul>
             </div>
         )
