@@ -31,3 +31,17 @@ This repo includes:
 * configuration for Jest and Enzyme (including JSDOM)
 * configuration for server-side debugging in VS Code
 * a single client-side test (`/tests/client/App.test.js`)
+# Hivemind
+
+## User story
+- As a user, I want to create a discussion (hive)
+- As a user, I want to control how long the discussion will last
+- I want to control who has access to the discussion
+- I want to contribute to a discussion
+- I want to be able to save the conversation
+
+## Learning objectives
+- Use moment.js and time/date methods in JS
+- Write a RESTful API
+- Explore best practices to respect user's privacy
+- Implement password control access
