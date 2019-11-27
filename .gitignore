@@ -1,4 +1,10 @@
 node_modules
 bundle.*
+<<<<<<< HEAD
+
+.vscode
+dist
+=======
 *.log
 dev.sqlite3
+>>>>>>> a0e9d2e9c4ec52ca12da30a50fb689b4ced55b9a

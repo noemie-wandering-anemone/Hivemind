@@ -1,0 +1,18 @@
+<form action="/ask" method="post">
+    <label for="question">
+        <input type="text" name="question" value="question">
+        <!--take value from req.body-->
+    </label>
+    <label for="explanation">
+        <input type="text" name="explanation" value="Maybe you want to give some context to your question?">
+    </label>
+    <input type="radio" id="1day" name="duration" value="1">
+    <label for="1day">1 Day</label>
+    <input type="radio" id="1week" name="duration" value="7">
+    <label for="1week">1 Week</label>
+    <input type="radio" id="2weeks" name="duration" value="14">
+    <label for="2weeks">2 Weeks</label>
+    
+    <!--Add options to add pics, sounds, ...-->
+    <input type="submit" name="" value="Create Hive!">
+</form>

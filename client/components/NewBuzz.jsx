@@ -8,7 +8,8 @@ class NewBuzz extends React.Component {
         super(props)
         this.state = {
             ...props,
-            content: ""
+            content: "",
+            name: "",
         }
     }
 
@@ -20,19 +21,22 @@ class NewBuzz extends React.Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
         saveBuzz(this.state)
         this.setState({
             ...this.state,
             content: ''
         })
-        window.location.reload(false) //need redux or callback
+        event.preventDefault()
+       // window.location.reload(false) //need redux or callback
     }
 
     render () {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <textarea name="content" id="newBuzz" cols="70" rows="10" value={this.state.content} onChange={this.handleEntries} />
+            <form onSubmit={this.handleSubmit} id="buzzForm">
+                <label htmlFor="name">Name: 
+                <input type="text" name="name" id="name" onChange={this.handleEntries} />
+                </label>
+                <textarea name="content" id="newBuzz" cols="70" rows="10" value={this.state.content} placeholder="" onChange={this.handleEntries} />
                 <input type="submit" value="Add answer"/>
             </form>
         )

@@ -13,24 +13,22 @@ class Buzzes extends React.Component {
         
     }
 
-    
-
     componentDidMount () {
-            const hive_id = this.props.hive_id
-            getBuzzes(hive_id)
-                .then((buzzes) => {
-                    this.setState({
-                        ...this.state,
-                        buzzes: buzzes
-                    })
+        const hive_id = this.props.hive_id
+        getBuzzes(hive_id)
+            .then((buzzes) => {
+                this.setState({
+                    ...this.state,
+                    buzzes: buzzes
                 })
+            })
     }
 
     render () {
         return(
             <div id='buzzes'>
                 <ul>
-                    {this.state.buzzes.map(buzz => <li key={buzz.id}>{buzz.content}</li>)}
+                    {this.state.buzzes.map(buzz => <li key={buzz.id}><p className="bee">{buzz.name}:</p><p className="buzz">{buzz.content}</p></li>)}
                 </ul>
             </div>
         )

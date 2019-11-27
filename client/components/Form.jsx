@@ -10,7 +10,7 @@ class Form extends React.Component {
             question: '',
             explanation: '',
             duration: 7,
-            creator: '',
+            name: '',
             toEmail: 0,
             email: '',
         }
@@ -48,9 +48,10 @@ class Form extends React.Component {
 
     render () {
         return (
-            <form  onSubmit={this.handleFormSubmit}>
+            <form  onSubmit={this.handleFormSubmit} id="hiveForm">
                 <label htmlFor="question">Question</label>
                 <input id='question' type="text" name="question" value={this.state.question} onChange={this.handleEntries} required />
+                
                 <label htmlFor="explanation">Maybe you want to give some context to your question?</label>
                 <textarea id="explanation" type="text" name="explanation" rows="10" cols="50" value={this.state.explanation} onChange={this.handleEntries} />
                 <label htmlFor="duration">Choose a lifespan for your discussion:</label>
@@ -59,8 +60,8 @@ class Form extends React.Component {
                 </div>
                 <p>Value: <span id="value">{this.state.duration} day(s)</span></p>
                 {/* Add options to add pics, sounds, ... */}
-                <label htmlFor="question">Username</label>
-                <input id='username' type="text" name="creator" value={this.state.creator} onChange={this.handleEntries} required />
+                <label htmlFor="username">Username</label>
+                <input id='username' type="text" name="name" value={this.state.name} onChange={this.handleEntries} required />
                 
                 <div>
                 <p>Do you wish to save this conversation once it has reached its end date?</p>
