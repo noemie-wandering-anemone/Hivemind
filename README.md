@@ -1,24 +1,47 @@
-# Boilerplate: Knex.js
+## Hivemind
 
-Phase 1 boilerplate project with:
-
- - Express
- - Knex
- - SQLite3
- - Express Handlebars
- - body-parser
- - Jest
- - nodemon
+### To do list
+- Delete hive when expired
+- Export hive as PDF
+- Generate random url
+- Import pics, sounds, ...
+- User-friendly way to share url
 
 
-## Install
+
+### Fullstack boilerplate
+
+To get started:
 
 ```
-npm install
-npx knex migrate:latest
-npx knex seed:run
-npm run dev
+git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
+cd [your-project-name]
+npm install # to install dependencies
+npm run dev # to start the dev server
 ```
 
-Be sure to check out the other npm scripts too.
+You can find the server running on [http://localhost:3000](http://localhost:3000).
 
+This repo includes:
+
+* a single, simple API endpoint (`/api/v1/fruits`)
+* a single React component (`<App />`)
+* a fake database module (`db.js`)
+* an API client module (`apiClient.js`)
+* configuration for Jest and Enzyme (including JSDOM)
+* configuration for server-side debugging in VS Code
+* a single client-side test (`/tests/client/App.test.js`)
+# Hivemind
+
+## User story
+- As a user, I want to create a discussion (hive)
+- As a user, I want to control how long the discussion will last
+- I want to control who has access to the discussion
+- I want to contribute to a discussion
+- I want to be able to save the conversation
+
+## Learning objectives
+- Use moment.js and time/date methods in JS
+- Write a RESTful API
+- Explore best practices to respect user's privacy
+- Implement password control access

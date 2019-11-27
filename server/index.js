@@ -1,13 +1,8 @@
-const environment = process.env.NODE_ENV || 'development'
-const config = require('../knexfile')[environment]
-const connection = require('knex')(config)
-
 const server = require('./server')
-server.connection = connection
 
-const port = process.env.PORT || 3000
+const port = 3000
 
-server.listen(port, function () {
+server.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log('Listening on port', port)
+  console.log('Server listening on port', port)
 })

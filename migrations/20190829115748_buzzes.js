@@ -4,11 +4,10 @@ exports.up = (knex, Promise) => {
         table.string('content')
         table.integer('hive_id')
         table.integer('bee_id')
-        table.date('end-date')
         //table.array('plusone')
     })
 };
 
 exports.down = (knex, Promise) => {
-    return knex.schema.dropTable('hives')
+    return knex.schema.dropTable('buzzes')
 };
