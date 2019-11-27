@@ -13,7 +13,8 @@ router.get('/:id', (req,res) => {
 
 router.post('/buzz', (req, res) => {
   db.addBee(req.body)
-      .then((ids) => {
+    .then((ids) => {
+        console.log(ids)
         const id = ids[0]
         db.addBuzz(req.body, id)
           .then((result) => {

@@ -21,13 +21,13 @@ class NewBuzz extends React.Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
         saveBuzz(this.state)
         this.setState({
             ...this.state,
             content: ''
         })
-        window.location.reload(false) //need redux or callback
+        event.preventDefault()
+       // window.location.reload(false) //need redux or callback
     }
 
     render () {
