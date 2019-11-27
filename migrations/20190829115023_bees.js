@@ -2,8 +2,8 @@ exports.up = (knex, Promise) => {
     return knex.schema.createTable('bees', (table) => {
         table.increments('id').primary()
         table.string('name')
-        //table.string('email')
-        table.boolean('send-hive')
+        table.string('email')
+        table.boolean('sendHive')
     })
 };
 
