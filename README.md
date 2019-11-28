@@ -1,4 +1,4 @@
-# Hivemind
+# Hey Hivemind!
 
 ## User story
 - As a user, I want to create a discussion (hive)
