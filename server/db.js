@@ -39,7 +39,6 @@ function getHiveData (id) {
 }
 
 function addBuzz(buzz, id) {
-  console.log(buzz)
   return db('buzzes')
     .insert({
       content: buzz.content,
