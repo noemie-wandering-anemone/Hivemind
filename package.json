@@ -15,7 +15,7 @@
     "start": "run-s build server",
     "test": "jest --verbose --watchAll",
     "knex": "knex",
-    "postinstall": "webpack && knex migrate:latest"
+    "postinstall": "webpack --config client/webpack.config.prod.js && knex migrate:latest"
   },
   "babel": {
     "presets": [
