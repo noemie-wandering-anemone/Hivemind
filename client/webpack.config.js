@@ -6,7 +6,7 @@ module.exports = {
     path: path.join(__dirname, '../server/public'),
     filename: 'bundle.js'
   },
-  mode: 'development',
+  mode: 'production', //changed for deployment, original was developement
   module: {
     rules: [{
       test: /\.jsx?$/,
